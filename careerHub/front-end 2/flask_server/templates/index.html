@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Counseling Chat Application</title>
+    <style>
+        .chat-history {
+            background-image: url('https://cdn.wallpapersafari.com/0/62/TA4eir.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            padding: 50px;
+            border-radius: 10px;
+            overflow: auto;
+            max-height: 400px;
+            color: #f5f5f5;
+        }
+        .chat-message {
+            background-color: rgba(3, 0, 0, 0.8);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .chat-message .sender {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Career Counseling Chat Application</h1>
+    <div class="chat-history">
+        {% for speaker, message in chat_history %}
+            <div class="chat-message">
+                <p class="sender">{{ speaker }}:</p>
+                <p>{{ message }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <form method="POST" action="/">
+        <input type="text" name="user_question" placeholder="Ask a question about career counseling" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

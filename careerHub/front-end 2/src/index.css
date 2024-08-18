@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-list {
+    list-style-type: square; /* Or choose 'disc', 'circle', etc. */
+  }
+  
+  .custom-list li {
+    margin-left: 20px;
+  }
+  
